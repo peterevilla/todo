@@ -15,15 +15,26 @@ list.appendChild(deleteBtn);
 
 list.classList.add('items')
 newItem.classList.add('text-item')
+newItem.classList.add('delete')
 deleteBtn.classList.add('btn')
+deleteBtn.classList.add('delete')
 
-newItem.textContent = userInput.value;
+
 deleteBtn.textContent = 'X';
 
 
-enterButton.addEventListener('click', (ele) => {
+enterButton.addEventListener('click', () => {
+     
+    deleteBtn.classList.toggle('delete')
+    newItem.classList.toggle('delete')
+    newItem.textContent = userInput.value;
+    userInput.value = '';
+ })
 
-    list.classList.toggle('items')
+ deleteBtn.addEventListener('click', () => {
+
+    deleteBtn.classList.toggle('delete')
+    newItem.classList.toggle('delete')
  })
 
 
