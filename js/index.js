@@ -1,98 +1,40 @@
-// Your code goes here
-
-let mouseOver = document.querySelector('.nav');
-
-mouseOver.addEventListener('mouseover', (ele) => {
-
-    ele.target.style.fontSize = '20px';
-})
-
-let key = document.querySelector('body')
-
-key.addEventListener('keydown', (ele) => {
-
-    alert('Busted');
-})
+let enterButton = document.getElementById("enter");
+var userInput = document.getElementById("userInput");
 
 
+console.log(userInput.value)
 
-let wheel = document.querySelector('.main-navigation')
+function createList() {
 
-wheel.addEventListener('wheel', (ele) => {
+let list = document.createElement('div');
+let newItem = document.createElement('p');
+let deleteBtn = document.createElement('button');
 
-    ele.target.style.backgroundColor = 'yellow';
-    event.stopPropagation()
-})
+list.appendChild(newItem);
+list.appendChild(deleteBtn);
+
+list.classList.add('items')
+newItem.classList.add('text-item')
+deleteBtn.classList.add('btn')
+
+newItem.textContent = userInput.value;
+deleteBtn.textContent = 'X';
 
 
-let drag = document.querySelectorAll('img');
+enterButton.addEventListener('click', (ele) => {
 
-drag.forEach( (link) => { link.addEventListener('drag', (ele) => {
+    list.classList.toggle('items')
+ })
 
-    ele.target.style.border = '4px solid black';
-    console.log(ele)
 
-})})
+return list;
 
 
 
- 
-let loaded = document.querySelector('img')
+}
 
 
 
+let theList = document.querySelector('.list');
 
-
-loaded.addEventListener('load', (ele) => {
-
-    console.log('image is  loaded')
-})
-
-
-
-/*let scroll = document.querySelector('body')
-
-wheel.addEventListener('scroll', (ele) => {
-
-    ele.target.style.backgroundColor = 'yellow';
-    event.stopPropagation()
-})*/
-
-
-
-
-
-
-
-window.addEventListener('resize', (event) => {
-
-    let newSize = document.querySelector('body');
-    newSize.style.backgroundColor = 'gray';
-    console.log('resize')
-    
-})
-
-
-
-let dClick = document.querySelectorAll('img');
-
-dClick.forEach( (link) => { link.addEventListener('dblclick', (ele) => {
-
-    ele.target.style.filter = 'grayscale(100%)';
-    console.log(ele)
-
-})})
-
-let slct = document.querySelector('h2');
-
-   slct.addEventListener('select', (ele) => {
-
-    ele.target.style.color = 'yellow';
-    console.log('selected')
-})
-
-
-
-
-
-
+theList.appendChild(createList())
