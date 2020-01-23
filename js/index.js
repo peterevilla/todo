@@ -1,51 +1,58 @@
 let enterButton = document.getElementById("enter");
 var userInput = document.getElementById("userInput");
+let listUl = document.querySelector("ul");
+
+
+function inputLength(){
+	return userInput.value.length;
+} 
 
 
 console.log(userInput.value)
 
 function createList() {
 
-let list = document.createElement('div');
-let newItem = document.createElement('p');
-let deleteBtn = document.createElement('button');
 
-list.appendChild(newItem);
-list.appendChild(deleteBtn);
+let newItem = document.createElement('li');
+newItem.appendChild(document.createTextNode(userInput.value));
+listUl.appendChild(newItem);
+userInput.value = '';
 
-list.classList.add('items')
-newItem.classList.add('text-item')
-newItem.classList.add('delete')
-deleteBtn.classList.add('btn')
-deleteBtn.classList.add('delete')
+let newButton = document.createElement('button')
+newButton.appendChild(document.createTextNode("X"));
+newItem.appendChild(newButton)
 
 
-deleteBtn.textContent = 'X';
+function deleteItem() {
+
+   newItem.classList.add('delete')
+}
+
+function doneItem() {
+
+   newItem.classList.add('done')
+}
 
 
-enterButton.addEventListener('click', () => {
-     
-    deleteBtn.classList.toggle('delete')
-    newItem.classList.toggle('delete')
-    newItem.textContent = userInput.value;
-    userInput.value = '';
- })
 
- deleteBtn.addEventListener('click', () => {
-
-    deleteBtn.classList.toggle('delete')
-    newItem.classList.toggle('delete')
- })
-
-
-return list;
-
-
+newButton.addEventListener('click', deleteItem)
+newItem.addEventListener('click', doneItem)
 
 }
 
 
 
-let theList = document.querySelector('.list');
 
-theList.appendChild(createList())
+enterButton.addEventListener("click", () => {
+	if (inputLength() > 0) { 
+		createList();
+	}
+});
+
+userInput.addEventListener("keypress", (event) => {
+	if (inputLength() > 0 && event.which === 13) { 
+		createList();
+	}
+});
+
+

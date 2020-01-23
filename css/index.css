@@ -189,16 +189,14 @@ html {
   margin: auto;
   padding: 50px;
 }
+h1 {
+  color: orange;
+  font-weight: 800;
+}
 body {
-  background-image: url('https://images.pexels.com/photos/1089842/pexels-photo-1089842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  height: 1300px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: lightseagreen;
 }
 header {
-  background-color: lightblue;
   text-align: center;
 }
 .form {
@@ -223,32 +221,33 @@ input {
 #enter:hover {
   color: green;
 }
-.list {
+ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 5%;
+  margin-left: 25%;
+  width: 50%;
+  justify-content: center;
+  transition: 1s;
 }
-.list .items {
-  width: 70%;
-  height: 30px;
-  background-color: lightblue;
-  margin: 2%;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  display: flex;
-  justify-content: space-between;
-}
-.list .items .text-item {
-  text-align: left;
+ul li {
   font-size: 2rem;
-  margin-left: 2%;
+  margin: 2%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+  border: 2px solid orange;
+  transition: 1s;
 }
-.list .items .btn {
-  background-color: lightblue;
-  border: lightblue;
-  text-shadow: lightgray;
+ul li button {
+  background: none;
+  border: none;
+  float: right;
 }
-.list .items .btn:hover {
-  background-color: lightskyblue;
+ul li button:hover {
+  color: red;
+}
+.done {
+  background-color: lightgreen;
 }

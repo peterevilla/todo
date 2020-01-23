@@ -6,14 +6,19 @@ html {
   
 }
 
+h1 {
+
+  color: orange;
+   font-weight: 800;
+}
+
 body {
-  background-image: url('https://images.pexels.com/photos/1089842/pexels-photo-1089842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  .parallax();
+  background-color: lightseagreen;
+  //.parallax();
 }
 
 header {
 
-  background-color: lightblue;
   text-align: center;
   
 }
@@ -51,45 +56,50 @@ input {
     }
 }
 
-.list {
+ul {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-top: 5%;
+  margin-left: 25%;
+  width: 50%;
+  justify-content: center;
+  transition: 1s;
 
-.items {
+  
 
-  width: 70%;
-  height: 30px;
-  background-color: lightblue;
+li {
+
+  font-size: 2rem;
   margin: 2%;
+  background-color: whitesmoke;
   border-radius: 5px;
-  border: 1px solid lightgrey;
-  display: flex;
-  justify-content: space-between;
+  height: 30px;
+  text-align: center;
+  border: 2px solid orange;
+  transition: 1s;
 
 
+    button {
 
-     .text-item {
+      background: none;
+	    border: none;
+      float: right;
+      
+      &:hover {
 
-      text-align: left;
-      font-size: 2rem;
-      margin-left: 2%;
-     }
-
-     .btn {
-
-      background-color: lightblue;
-      border: lightblue;
-      text-shadow: lightgray;
-
-        &:hover {
-
-          background-color:lightskyblue;
-        }
+        color: red;
+      }
     }
-}
+
+ }
 }
 
+
+
+
+.done {
+
+  background-color: lightgreen;
+}
 
